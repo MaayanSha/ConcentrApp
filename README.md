@@ -1,3 +1,16 @@
+#ConcentrApp Dashboard
+
+Hi! this is a web application for creating, managing and viewing research questionnaires
+
+You can manage a number of experiments simultaniously, and create for each multiple, custom question trees. you can also manage your participants, and their schedules for answering their assigned questions. the collected data is easily accessible via the data collection board, where filters and visual aggregations can be applied, as well as csv export option
+
+This dashboard is a comprehensive, easy-on-the-eyes tool to help you run your experiment smoothly.
+
+Demo video at https://m.youtube.com/watch?v=4LzrZSYNKng
+
+notes:
+if you want the chatGPT tool to work, you need your own key. my key is not included here, for obvious reasons.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
