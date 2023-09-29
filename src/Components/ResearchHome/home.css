@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla');
+
+a {
+  text-decoration: none;
+}
+.column-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 1;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.column-1 {
+    border-radius: 30px;
+    width: calc(20%);
+    background: rgba(255, 255, 255, 0.6);
+    padding-top: 20px;
+    transition: width 0.3s;
+    overflow-x: hidden;
+    margin-right: 20px; /* Added margin to create space between column-1 and column-2 */
+}
+
+.column-1.expand {
+    width: calc(40%);
+}
+
+.column-2 {
+    flex: 1 1 calc(50% - 50px);
+}
+
+@media screen and (max-width: 768px) {
+    .column-1,
+    .column-2,
+    .column-3 {
+        width: 100%;
+        margin-right: 0; /* Reset margin on smaller screens */
+        margin-bottom: 20px; /* Add margin-bottom to create space between columns vertically */
+    }
+}
+
+/* Search container */
+.topnav {
+  position: relative;
+  display: flex;
+  padding: 10px 0px;
+  margin-bottom:20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  overflow: hidden;
+  border-bottom: 1px ridge whitesmoke;
+    font-family: Karla, sans-serif;
+}
+input[type="search"] {
+  box-sizing: border-box;
+  border: none;
+  width: 100%;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+/* Search input */
+.searchbar {
+  flex: 1;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  color: #444;
+}
+
+/* Search button */
+.search-button[type="submit"] {
+  text-indent: -999px;
+  overflow: hidden;
+  width: 40px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+search-button[type="submit"]:hover {
+  opacity: 1;
+}
+
+search-button[type="submit"]:focus,
+input[type="search"]:focus {
+  box-shadow: 0 0 3px 0 #1183d6;
+  border-color: #1183d6;
+  outline: none;
+}
+
+.welcome {
+  color:gray;
+  letter-spacing:.1rem;
+    font-family: Karla, sans-serif;
+}
+.name {
+ color:black;
+ display:inline-block;
+ margin-left:5px;
+ margin-bottom:20px;
+ letter-spacing:.1rem
+}
+
+.box1,
+.box2,
+.box3 {
+    flex:calc(33.33% - 20px); /* each box takes up one-third of the row minus margin */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    border-radius: 25px; /* make the box square with rounded corners */
+    font-family: Karla, sans-serif;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    aspect-ratio: 1/1; /* maintain a square aspect ratio */
+    max-height: 200px !important;
+    max-width: 200px!important;
+}
+
+.box1,
+.box2 {
+    border: 1px transparent;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.box3{
+
+}
+
+.title {
+    font-size: 16px;
+    margin: 0;
+    font-weight: bold;
+    color: rgb(142, 68, 173);
+}
+
+.desc {
+    font-size: 20px;
+    margin: 0;
+    font-weight: bold;
+    color: rgb(118, 68, 138);
+    white-space: normal; /* revert to normal white-space handling */
+    overflow: auto;
+    text-overflow: clip; /* show full text without ellipsis */
+    max-height: 100%; /* limit the height of the text to the box height */
+}
+
+
+.box3 {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='25' ry='25' stroke='%23333' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='7' stroke-linecap='square'/%3e%3c/svg%3e");
+  border-radius: 25px;
+  cursor:pointer;
+}
+
+.plus{
+   margin-top:20px;
+}
+
+.column-wrapper{
+    font-family: Karla, sans-serif;
+}
+

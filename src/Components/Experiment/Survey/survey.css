@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla');
+
+
+.h1X {
+  position: relative;
+  padding: 0;
+  margin: 40px 0;
+  font-family: Karla, sans-serif;
+  font-weight: 350;
+  font-size: 40px;
+  color: rgb(93, 109, 126);
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  align-items: center;
+  width: 70%;
+}
+
+.h1X::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  width: 0;
+  height: 2px;
+  background-color: rgb(136, 78, 160);
+  transition: width 1s ease-out, transform 1s ease-out;
+}
+
+.h1X::after {
+  width: 62%;
+  transform: translateX(0);
+  transition-delay: 1s;
+}
+
+
+.h1X span {
+  display: block;
+  font-size: 0.5em;
+  line-height: 1.3;
+}
+.h1X em {
+  font-style: normal;
+  font-weight: 500;
+}
+
+
+.transparent-button {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 1px 1px;
+  transition: background-color 0.2s ease-in-out;
+  margin-left:20px;
+  border-radius: 5px;
+  font-family: Karla, sans-serif;
+}
+
+.transparent-button:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* Change the value to adjust the hover color */
+}
+
+#newEdit {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #ccc; /* Add a border to the bottom of the input box */
+  color: inherit;
+  font-size: 22px;
+  padding: 10px;
+}
+
+.surveyTree {
+  font-family: Karla, sans-serif;
+  display: flex;
+  flex-direction: column;
+  border-left: lightgray solid 1px;
+}
+
+
+.node {
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+  position: relative;
+}
+
+.image-containerX {
+  display: flex;
+  align-items: center;
+  width: 75% !important;
+}
+
+.imageX {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  justify-content: center;
+}
+
+.imageX img {
+  width: 85%;
+  height: auto;
+}
+
+
+.imageX h3 {
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: Karla, sans-serif;
+}
+
+.h3X {
+  position: relative;
+  padding: 15px 10px;
+  margin: 0;
+  font-family: Karla, sans-serif;
+  font-size: 22px;
+  color: #080808;
+}
+
+.h3X b {
+  border-bottom: solid darkmagenta;
+}
+
+.h4X {
+  position: relative;
+  padding: 20px 0;
+  margin: 0;
+  font-family: Karla, sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  color: #080808;
+}
+
+.containerX {
+  display: flex;
+  flex-direction: column;
+  margin-top:20px;
+  margin-left:20px;
+  margin-bottom: 50px;
+}
+
+.containerT {
+  display: flex;
+  flex-direction: column;
+}
+
+/*.columnX {*/
+/*  width: 50%;*/
+/*  height: auto;*/
+/*}*/
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+/*.column {*/
+/*  flex: 1;*/
+/*}*/
+
+.imageX {
+  position: relative;
+  display: inline-block;
+}
+
+.image-overlayX {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25); /* Change the opacity value to adjust the opacity */
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border-radius: 100px;
+  border-style: hidden;
+}
+
+.imageX:hover .image-overlayX {
+  opacity: 1;
+}
+
+.image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: floralwhite;
+  font-size: 25px;
+  font-family: Karla, sans-serif;
+  font-weight: bolder;
+  text-align: center;
+  pointer-events: none; /* Allow hover events to pass through the overlay */
+}
+
+.input-box {
+  padding: 10px;
+  margin:8px 0;
+  border:solid lightgray;
+  border-radius:10px;
+  font-size:15px !important;
+}
+
+.input-box {
+  width: 60%;
+  margin: 0;
+  font-size: 25px;
+}
+
+.title {
+  font-size: larger;
+}
+[data-title] {
+  position: relative;
+}
+[data-title]:after {
+  content: attr(data-title);
+  color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 2px 5px 2px;
+  white-space: nowrap;
+  z-index: 99999;
+  visibility: hidden;
+  position: absolute;
+  left: 0%;
+  bottom: 120%;
+  border-radius: 4px 4px 4px 0;
+  font-size: 0.875rem;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+[data-title]:hover:after {
+  opacity: 1;
+  -webkit-transition: all 0.1s ease 0.3s;
+  transition: all 0.1s ease 0.3s;
+  visibility: visible;
+}
+
+.question {
+  margin-bottom: 0 !important;
+}
+.questionView {
+  margin-bottom: 20px;
+}
+
+.icons{
+  font-size: 25px;
+  color:lightgray;
+}
+
+.icons:hover {
+  color: #080808;
+}
+
+.icons-letter{
+  color: rgba(99, 57, 116,0.4);
+  margin-right: 4px;
+  font-size: 20px;
+}
+
+.scheme {
+  font-size: 20px;
+  font-family: Karla,sans-serif;
+}
+
+.scheme-icons {
+  margin-right: 10px;
+}
+
+.hidden-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+  transition: top 0.3s ease-in-out;
+}

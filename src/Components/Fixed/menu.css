@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla');
+
+
+.navBar{
+    font-family: Karla, sans-serif;
+    font-size: 18px;
+}
+
+
+.closemenu
+{
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+.logotext{
+    font-size: 20px;
+    margin-left: 25px;
+}
+
+.header-menu{
+    font-family: Karla, sans-serif;
+    font-size: 25px;
+    color: #5499C7;
+}
+

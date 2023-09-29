@@ -1,0 +1,47 @@
+.new-btn {
+    background: none;
+    color: inherit;
+    border: none;
+    padding-top:25px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    width:100%;
+    height:100%;
+}
+
+.new-btn:hover {
+  background-color: transparent;
+}
+
+.btn-edit {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  color: #3c4043;
+  cursor: pointer;
+  font-family: arial,sans-serif;
+  font-size: 14px;
+  height: 36px;
+  line-height: 27px;
+  min-width: 54px;
+  padding: 0 16px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: pre;
+  outline: none;
+}
+
+.btn-edit:hover {
+  border-color: transparent;
+  box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
+  color: #202124;
+  outline: none;
+}
+
+.btn-edit:focus {
+  border-color: transparent;
+  outline: none;
+}
