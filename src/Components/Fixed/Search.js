@@ -1,4 +1,4 @@
-import "../ResearchHome/home.css"
+import "../ResearchHome/css/home.css"
 import { Row } from "reactstrap";
 
 function Search(){

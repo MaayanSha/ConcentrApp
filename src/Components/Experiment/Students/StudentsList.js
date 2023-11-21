@@ -7,29 +7,15 @@ import {SlUserFollow} from "react-icons/sl";
 import NewStudentForm from "./NewStudentForm";
 import ParticipantsAPIService from "../APIServices/ParticipantsAPIService";
 import {ParticipantEditAPIService} from "../APIServices/ParticipantEditAPIService";
+import {dataAggregationModal} from "../Aggregations/DataAggregationModal";
+import {mockCollectedData} from "../CollectedData/MockCollectedData";
+import {currentResearchStore} from "../currentResearch";
 
 const imageFemale='https://www.w3schools.com/howto/img_avatar2.png';
 const imageMale='https://www.w3schools.com/howto/img_avatar.png';
-const StudentsList = ({research}) => {
+const StudentsList = () => {
 
-    const answerStats = [
-        {answered: 2},
-        {answered: 3},
-        {answered: 5},
-        {answered: 7.5},
-        {answered: 4},
-        {answered: 3},
-        {answered: 7},
-        {answered: 3.5},
-        {answered: 1},
-        {answered: 4},
-        {answered: 3},
-        {answered: 5.5},
-        {answered: 3},
-        {answered: 7},
-    ];
-
-    const [researchObj, setResearchObj] = useState(research? research : '');
+    const research = currentResearchStore.currentResearch;
     const [isEditHour, setIsEditHour] = useState(-1);
     const [hourIndex, setHourIndex] = useState('');
     const [hour, setHour] = useState('');
@@ -41,6 +27,7 @@ const StudentsList = ({research}) => {
     const [codesList, setCodesList] = useState([]);
     const [pingTimes, setPingTimes] = useState([]);
     const [contextData, setContextData] = useState([]);
+    const [answerStats, setAnswerStats] = useState([]);
 
 
     const handleHourEdit = (hourId, personId) => {
@@ -93,6 +80,8 @@ const StudentsList = ({research}) => {
             hourArray = [];
         });
         setPingTimes(jointArray);
+        const stats = dataAggregationModal.answerRatePerUser(mockCollectedData, codeData);
+        setAnswerStats(stats)
     };
 
     const fetchPingTimes = (code) => {
@@ -137,14 +126,14 @@ const StudentsList = ({research}) => {
                                         </div>
                                         :
                                         <ProgressBar
-                                            progress={(answerStats[personIndex].answered)*12}
+                                            progress={(answerStats.find((student)=>student.code === person.code).count)*12}
                                             radius={70}
                                             strokeWidth={18}
                                             strokeColor="#5d9cec"
                                             strokeLinecap="square"
                                             trackStrokeWidth={18}>
                                             <div className="indicator">
-                                                <div>{(answerStats[personIndex].answered)*12}%</div>
+                                                <div>{(answerStats.find((student)=>student.code === person.code).count)*12}% <div style={{fontSize:15, marginBottom:5}}>complete</div></div>
                                             </div>
                                         </ProgressBar>}
                                     </div>

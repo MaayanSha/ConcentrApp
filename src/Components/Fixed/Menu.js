@@ -7,14 +7,16 @@ import {
     MenuItem,
 } from "react-pro-sidebar";
 import {GiAbstract050} from "react-icons/gi";
-import {SiApacheairflow} from "react-icons/si";
-import {FiArrowLeftCircle, FiArrowRightCircle, FiChevronsLeft, FiChevronsRight, FiHome, FiLogOut} from "react-icons/fi";
-import {FaBrain, FaList, FaRegHeart} from "react-icons/fa";
+import {FiChevronsLeft, FiChevronsRight, FiHome, FiLogOut} from "react-icons/fi";
+import {FaBrain, FaList} from "react-icons/fa";
 import {RiPencilLine} from "react-icons/ri";
 import {AuthContext} from "../Login/Authenticator";
+import {research} from "../Research";
+import {chooseResearchHandler} from "../ResearchHome/Home";
+import {observer} from "mobx-react-lite";
 
 
-const Sidenav = ({researches}) => {
+const Sidenav = observer(() => {
     const { logout } = useContext(AuthContext);
     const [shortMenu, setShortMenu] = useState(false)
     const [expand, setExpand] = useState(false);
@@ -42,13 +44,13 @@ const Sidenav = ({researches}) => {
                         </div>
                     </Menu>
                         <Menu iconShape="square">
-                            <MenuItem active={true} icon={<FiHome />}><Link className="nav-link" to={`/home`}>
+                            <MenuItem active={true} icon={<FiHome />}><Link className="nav-link" to={`/home`} onClick={()=>chooseResearchHandler(-1)}>
                                 Home
                             </Link>
                             </MenuItem>
                             <MenuItem icon={<FaList />} onClick={()=>setExpand(!expand)}>Researches</MenuItem>
-                            {expand && researches.map((research) => (
-                            <MenuItem><Link className='nav-link' to={`/data/${research.id}`} state={{researches: researches}}>{research.name}</Link></MenuItem>
+                            {expand && research.allResearches.map((research) => (
+                            <MenuItem><Link className='nav-link' to={`/data/${research.id}`} onClick={()=>chooseResearchHandler(research.id)}>{research.name}</Link></MenuItem>
                             ))}
                             <MenuItem icon={<RiPencilLine />}><Link className="nav-link" to={`/about`}>About</Link></MenuItem>
                         </Menu>
@@ -59,5 +61,5 @@ const Sidenav = ({researches}) => {
             </div>
         </>
     );
-}
+})
 export default Sidenav;

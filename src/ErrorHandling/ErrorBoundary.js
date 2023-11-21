@@ -1,5 +1,6 @@
 import React from "react";
 import FallbackScreen from "./FallbackScreen";
+import {useParams} from "react-router-dom";
 
 class ErrorBoundary extends React.Component {
     constructor(props) {
@@ -22,7 +23,10 @@ class ErrorBoundary extends React.Component {
             // You can render any custom fallback UI
             return <FallbackScreen />;
         }
-
+        const id = this.props.match.params.id;
+        if (!/\d+/.test(id)){
+            this.props.navigation.navigate('/')
+        }
         return this.props.children;
     }
 }

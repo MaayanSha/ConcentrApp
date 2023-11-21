@@ -1,6 +1,6 @@
 export const mockCollectedData = [
     {
-        participant:"vpmInU062coMv3v",
+        participant:"DqEwElGfpFGn1Kg",
         context:"Trial 3 Context",
         question:"how focused were you in the past 30 mins?",
         answer:"not at all",
@@ -12,7 +12,7 @@ export const mockCollectedData = [
         answer:"some of the time",
     },
     {
-        participant:"tIIpo2MR8v4fxxV",
+        participant:"DqEwElGfpFn1Kg",
         context:"Trial 3 Context",
         question:"how focused were you in the past 30 mins?",
         answer:"not at all",
@@ -68,6 +68,30 @@ export const mockCollectedData = [
     {
         participant:"pyXohwL8MTzWbZE",
         context:"Trial 3 Decision",
+        question:"How hard it was to stay focused on your homework?",
+        answer:"all of the time",
+    },
+    {
+        participant:"tIIpo2MR8v4fxxV",
+        context:"Trial Tester Questions",
+        question:"how focused were you in the past 30 mins?",
+        answer:"not at all",
+    },
+    {
+        participant:"pyXohwL8MTzWbZE",
+        context:"Trial Tester Questions",
+        question:"How hard it was to stay focused on your homework?",
+        answer:"all of the time",
+    },
+    {
+        participant:"tIIpo2MR8v4fxxV",
+        context:"Trial Tester Questions",
+        question:"how focused were you in the past 30 mins?",
+        answer:"not at all",
+    },
+    {
+        participant:"pyXohwL8MTzWbZE",
+        context:"Trial Tester Questions",
         question:"How hard it was to stay focused on your homework?",
         answer:"all of the time",
     }

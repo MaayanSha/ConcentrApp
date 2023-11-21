@@ -3,16 +3,15 @@ import StudentsList from "./StudentsList";
 import {useLocation} from "react-router-dom";
 import SurveyMenu from "../Survey/SurveyMenu";
 import {ResearchContext} from "../ResearchContext";
+import {currentResearchStore} from "../currentResearch";
 
-export default function ManageStudents(props){
-    // const location = useLocation()
-    // const { research } = location.state;
-    const storedResearch = JSON.parse(localStorage.getItem('research'));
+export default function ManageStudents(){
+    const storedResearch = currentResearchStore.currentResearch;
 
     return(
         <div className="column-wrapper">
             <div className="column-1">
-                <SurveyMenu research={storedResearch}/>
+                <SurveyMenu />
             </div>
         <div className="column-2">
            <StudentsList research={storedResearch}/>

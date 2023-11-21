@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import { useLocation } from "react-router-dom";
 import SurveyComposite from "./SurveyComposite"
 import ContextComposite from "./ContextComposite"
 import "./survey.css"
@@ -13,11 +12,11 @@ import QuestionsAPIService from "../APIServices/QuestionsAPIService"
 import InitializeQuestionsAPIService from "../APIServices/InitializeQuestionsAPIService";
 import InitializeAttentionQuestionsAPIService from "../APIServices/InitializeAttentionQuestionsAPIService";
 import SurveyMenu from "./SurveyMenu";
-import ChatGPT from "./ChatGPT/ChatGPT";
+import {currentResearchStore} from "../currentResearch";
+import {observer} from "mobx-react-lite";
 
-export default function Survey(props) {
-    const location = useLocation()
-    const { research } = location.state
+const Survey = observer(() =>{
+    const research  = currentResearchStore.currentResearch;
     const [decisionSchemes, setDecisionSchemes] = useState([]);
     const [context_schemes, setContextSchemes] = useState([]);
     const [isNewDecision, setIsNewDecision] = useState(false);
@@ -37,7 +36,6 @@ export default function Survey(props) {
     const [showDecisionSchemeId, setShowDecisionSchemeId] = useState(null);
     const [editContextSchemeId, setEditContextSchemeId] = useState(null);
     const [showContextSchemeId, setShowContextSchemeId] = useState(null);
-    const [contextTreeInit, setContextTreeInit] = useState([]);
     const [contextNewQuestion, setContextNewQuestion] = useState(null);
 
     const editContextTree = (schemeId) => {
@@ -310,4 +308,5 @@ export default function Survey(props) {
 
     );
 
-}
+});
+export default Survey;

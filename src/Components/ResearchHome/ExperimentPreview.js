@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Col } from "reactstrap";
 import Home from "./Home.js";
-import "./home.css"
+import "./css/home.css"
 
 
 class ExperimentPreview extends Component {
@@ -36,14 +36,14 @@ class ExperimentPreview extends Component {
   }
 
     previewTemplate = {
-       title:() => <h6 class="title" style={{ color: this.state.text}}>{this.props.title}</h6>,
-       data:() => <h2 class="desc" style={{ color: this.state.text}}>{this.props.description}</h2>,
+       title:() => <h6 className="title" style={{ color: this.state.text}}>{this.props.title}</h6>,
+       data:() => <h2 className="desc" style={{ color: this.state.text}}>{this.props.description}</h2>,
     };
 
   render() {
 //todo: make a new data modal for statistics per experiment and call it here
     return (
-        <div class="box2" style={{ backgroundColor: this.state.color }}>
+        <div className="box2" style={{ backgroundColor: this.state.color }}>
             {this.previewTemplate.title()}
             {this.previewTemplate.data()}
         </div>

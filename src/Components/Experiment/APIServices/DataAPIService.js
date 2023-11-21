@@ -3,7 +3,7 @@ import axios from 'axios';
 import { API_URL } from '../../../Constants';
 import cookie from 'js-cookie';
 
-const DataAPIService = async ({ research, handleDataFetch }) => {
+const DataAPIService = async ({ research }) => {
     try {
         const dataResponse = await axios.get(API_URL + `submission/data/`, {
             headers: {
@@ -15,7 +15,7 @@ const DataAPIService = async ({ research, handleDataFetch }) => {
         });
 
         const dataCollected = dataResponse.data.data;
-        handleDataFetch(dataCollected);
+        return dataCollected;
 
     } catch (error) {
         console.error(

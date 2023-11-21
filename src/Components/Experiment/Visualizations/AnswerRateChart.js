@@ -2,10 +2,11 @@ import { ResponsiveBar } from '@nivo/bar'
 import {rgb} from "d3-color";
 
 const AnswerRateChart = ({ data }) => (
+    <div className="col-sm-6" style={{paddingRight:50}}>
     <ResponsiveBar
         data={data}
-        keys={["answerRate"]}
-        indexBy={"activity"}
+        indexBy={"context"}
+        keys={['rate']}
         colorBy={"indexValue"}
         margin={{ top: 50, right: 0, bottom: 50, left: 60 }}
         padding={0.3}
@@ -21,7 +22,6 @@ const AnswerRateChart = ({ data }) => (
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: 'activity',
             legendPosition: 'middle',
             legendOffset: 32
         }}
@@ -46,6 +46,7 @@ const AnswerRateChart = ({ data }) => (
         }}
         role="application"
     />
+    </div>
 )
 
 export default AnswerRateChart;

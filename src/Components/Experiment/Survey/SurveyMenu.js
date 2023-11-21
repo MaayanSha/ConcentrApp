@@ -14,12 +14,16 @@ import {BsClipboard2Data} from "react-icons/bs";
 import {ImStatsBars} from "react-icons/im";
 import {VscPerson} from "react-icons/vsc";
 import {MdPersonOutline} from "react-icons/md";
+import {currentResearchStore} from "../currentResearch";
+import {chooseResearchHandler} from "../../ResearchHome/Home";
+import {observer} from "mobx-react-lite";
 
 
 
-const SurveyMenu = ({research}) => {
+const SurveyMenu = observer(() => {
     const [shortMenu, setShortMenu] = useState(false)
     const [expand, setExpand] = useState(false);
+    const research = currentResearchStore.currentResearch;
     const menuIconClick = () => {
         setShortMenu(!shortMenu);
     };
@@ -41,14 +45,13 @@ const SurveyMenu = ({research}) => {
                         </div>
                     </Menu>
                     <Menu iconShape="square">
-                        <MenuItem active={true} icon={<FiHome />}><Link className="nav-link" to={`/home`}>
+                        <MenuItem active={true} icon={<FiHome />}><Link className="nav-link" to={`/home`} onClick={()=>chooseResearchHandler(-1)}>
                             Home
                         </Link>
                         </MenuItem>
                         <MenuItem icon={<RiSurveyLine />}><Link
                             className="nav-link"
-                            to={`/data/${research.id}/edit`}
-                            state={{ research:research,}}>
+                            to={`/data/${research.id}/edit`}>
                             View / Edit Surveys
                         </Link>
                         </MenuItem>
@@ -60,8 +63,7 @@ const SurveyMenu = ({research}) => {
                         </MenuItem>
                         <MenuItem icon={<MdPersonOutline/>}><Link
                             className="nav-link"
-                            to={`/data/${research.id}/students`}
-                            state={{ research:research,}}>
+                            to={`/data/${research.id}/students`}>
                             Participants
                         </Link>
                         </MenuItem>
@@ -73,5 +75,5 @@ const SurveyMenu = ({research}) => {
             </div>
         </>
     );
-}
+});
 export default SurveyMenu;

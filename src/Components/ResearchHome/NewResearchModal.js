@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
 import NewResearchForm from "./NewResearchForm";
 import "./newResearch.css"
+import {research} from "../Research";
 
 class NewResearchModal extends Component {
   state = {
@@ -14,6 +15,9 @@ class NewResearchModal extends Component {
     }));
   };//each toggle switches the state on\off
 
+  resetState = () => {
+    research.getResearches();
+  }
   render() {
     const create = this.props.create;
 
@@ -40,9 +44,9 @@ class NewResearchModal extends Component {
 
           <ModalBody>
             <NewResearchForm
-              resetState={this.props.resetState}
+              resetState={this.resetState}
               toggle={this.toggle}
-              research={this.props.research}
+              research={research.allResearches}
             />
           </ModalBody>
         </Modal>
