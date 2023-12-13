@@ -46,7 +46,7 @@ class NewResearchModal extends Component {
             <NewResearchForm
               resetState={this.resetState}
               toggle={this.toggle}
-              research={research.allResearches}
+              research={create? null : this.props.research}
             />
           </ModalBody>
         </Modal>

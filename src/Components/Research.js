@@ -1,5 +1,5 @@
 import React from "react"
-import {action, makeAutoObservable, makeObservable, observable, get, set} from "mobx"
+import {action, makeAutoObservable, makeObservable, observable, get, set, autorun} from "mobx"
 import { observer } from "mobx-react-lite"
 import axios from "axios";
 import {API_URL} from "../Constants";
@@ -7,6 +7,7 @@ import cookie from "js-cookie";
 
 class Research{
     allResearches = [];
+    isInitialized = false;
     constructor() {
         makeObservable(this,{
             allResearches: observable,
@@ -25,6 +26,7 @@ class Research{
                 : error.message);
         });
     }
+
 
 }
 export const research = new Research();

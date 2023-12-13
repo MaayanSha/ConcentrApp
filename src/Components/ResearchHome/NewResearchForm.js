@@ -74,7 +74,7 @@ class NewResearchForm extends Component {
             value={this.defaultIfEmpty(this.state.description)}
           />
         </FormGroup>
-        <Button>Submit</Button>
+        <Button type="submit">Submit</Button>
       </Form>
     );
   }

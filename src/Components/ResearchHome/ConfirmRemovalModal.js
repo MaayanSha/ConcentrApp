@@ -23,7 +23,7 @@ class ConfirmRemovalModal extends Component {
       headers: {
         'Authorization': `Bearer ${cookie.get('jwt-authorization')}`
       }
-    }).then(() => {
+    }).then((res) => {
       this.props.resetState();
       this.toggle();
     });
@@ -46,7 +46,7 @@ class ConfirmRemovalModal extends Component {
             </button>
             <button
             className="btn-edit"
-              type="button"
+              type="submit"
               onClick={() => this.deleteStudent(this.props.id)}
             >
               Yes

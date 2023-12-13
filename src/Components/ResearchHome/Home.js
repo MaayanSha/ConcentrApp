@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useContext, useEffect} from "react";
 import { Col, Container, Row } from "reactstrap";
 import NewResearchModal from "./NewResearchModal.js";
 import Menu from "../Fixed/Menu.js"
@@ -10,11 +10,11 @@ import {observer} from "mobx-react-lite";
 import { research } from "../Research";
 import { currentResearchStore } from "../Experiment/currentResearch";
 import {render} from "@testing-library/react";
+import {toJS} from "mobx";
+import {AuthContext} from "../Login/Authenticator";
 
 const Home = observer(() => {
-    useEffect(() => {
-
-    })
+    const { user } = useContext(AuthContext);
      return (
             <div className="column-wrapper">
                 <div className="column column-1">
@@ -25,7 +25,7 @@ const Home = observer(() => {
                         <Row>
                             <h1 className="welcome">
                                 Welcome,
-                                <div className="name">Elana</div></h1>
+                                <div className="name">{user}</div></h1>
                         </Row>
                         <Row>
                             {research.allResearches.length === 0 ? (

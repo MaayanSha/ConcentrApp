@@ -3,11 +3,17 @@ import {DataGrid, GridToolbar} from '@mui/x-data-grid';
 import {Box, useTheme} from "@mui/material";
 import NewResearchModal from "./NewResearchModal";
 import ConfirmRemovalModal from "./ConfirmRemovalModal";
+import {research} from "../Research";
+import {observer} from "mobx-react-lite";
+import {toJS} from "mobx";
 
 
-export default function ResearchesData({researches, resetState}) {
+function ResearchesData() {
 
     const theme = useTheme();
+    const researches = research.allResearches;
+    console.log(toJS(researches))
+    const resetState = ()=> research.getResearches();
 
 
     const rows = researches.map((research, index) => ({
@@ -27,11 +33,10 @@ export default function ResearchesData({researches, resetState}) {
         { field: 'edit', headerName: '', width: 100 ,renderCell: (research) => {return <NewResearchModal
                 create={false}
                 research={research}
-                resetState={resetState}
             />}},
         { field: 'delete', headerName: '', width: 100 , renderCell: (research) => {
                 return <ConfirmRemovalModal
-                    id={research.id}
+                    id={research.research_num}
                     resetState={resetState}
                 />
             }},
@@ -53,3 +58,4 @@ export default function ResearchesData({researches, resetState}) {
         </div>
     );
 }
+export default observer(ResearchesData);

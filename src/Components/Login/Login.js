@@ -40,11 +40,11 @@ export default function Login(){
               withCredentials: true,
             }
           );
+            setEmail(email);
+            setPassword(password);
           const accessToken = response?.data?.token.access;
-          login(accessToken);
-          setUsername(username);
-          setEmail(email);
-          setPassword(password);
+          const user = email.split("@")[0];
+          login(accessToken,user);
           nav('/home');
         } catch (err) {
           if (!err?.response) {
