@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/concentrapp/static/css/main.918b11ac.css",
+    "main.js": "/concentrapp/static/js/main.38e3c2aa.js",
+    "static/js/787.7f7e4992.chunk.js": "/concentrapp/static/js/787.7f7e4992.chunk.js",
+    "static/media/3.png": "/concentrapp/static/media/3.43785f57660494f41acf.png",
+    "static/media/1.png": "/concentrapp/static/media/1.daff0b5c472f1b791c79.png",
+    "static/media/2.png": "/concentrapp/static/media/2.c38c1e4df7a0ca958896.png",
+    "static/media/5.png": "/concentrapp/static/media/5.b475b516295d2be419d9.png",
+    "static/media/4.png": "/concentrapp/static/media/4.0fc13ece98edcbb4ab9f.png",
+    "static/media/brainMechanic.jpg": "/concentrapp/static/media/brainMechanic.a89ee9d70e65f8776f46.jpg",
+    "static/media/decision.svg": "/concentrapp/static/media/decision.c147a68f71b8c72e4ca172d9ccb30a26.svg",
+    "static/media/context.svg": "/concentrapp/static/media/context.bbe88901bcf15d6e4e16ee21e4339ad5.svg",
+    "index.html": "/concentrapp/index.html",
+    "main.918b11ac.css.map": "/concentrapp/static/css/main.918b11ac.css.map",
+    "main.38e3c2aa.js.map": "/concentrapp/static/js/main.38e3c2aa.js.map",
+    "787.7f7e4992.chunk.js.map": "/concentrapp/static/js/787.7f7e4992.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.918b11ac.css",
+    "static/js/main.38e3c2aa.js"
+  ]
+}
